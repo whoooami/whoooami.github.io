@@ -1,8 +1,8 @@
-title: Stack Problems
+title: Stack Problems And Solutions.
 description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I am freelance developer. Currently doing more in backend, actually in Python and Django.
+author: Whoooami
+github: https://github.com/whoooami
+about: I am freelance developer. Currently doing more in backend, actually in Python and Java.
 disqus_shortname: stackproblems
 google_analytics: UA-XXXXXXXX-Y
 
@@ -20,14 +20,14 @@ social:
     - icon: fa-skype
       link: "#"
     - icon: fa-twitter
-      link: "https://twitter.com/agusmakmun6"
+      link: "https://twitter.com/_beaman"
     - icon: fa-linkedin
       link: "#"
     - icon: fa-stack-exchange
       link: "#"
 
 share:
-  twitter_username: agusmakmun6
+  twitter_username: _beaman
   fb_appid: 1749788565247320
 
 urls:
@@ -36,11 +36,11 @@ urls:
     - text: Projects
       url: /projects/
     - text: Github
-      url: https://github.com/agusmakmun
+      url: https://github.com/whoooami
     - text: XML Feed
       url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://whoooami.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
