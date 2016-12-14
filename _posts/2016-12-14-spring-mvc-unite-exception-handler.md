@@ -23,6 +23,7 @@ When we use spring mvc restful api, we needn't return the error msg up to contro
 2. throw new BadRequestException(ErrorCode.CAMPAIGN_DATE_INVALID, "CAMPAIGN_DATE_INVALID")
 3. throw new BadRequestException(ErrorCode.CAMPAIGN_DATE_INVALID, "CAMPAIGN DATE INVALID", ImmutableMap.of("CAMPAIGN_DATE_INVALID", "Sorry, Campaign date invalid!"))
 ```
+* You can add UnauthorizedException with HttpStatus.UNAUTHORIZED、 ForbiddenException with HttpStatus.FORBIDDEN, something like that.
 
 **Solution:**
 
@@ -268,15 +269,26 @@ public class RestResponseEntityExceptionHandler extends
 }
 ```
 
+**Example:**
+
+* you can throw it anywhere when you need response it to client.
+
+```java
+@RequestMapping(value = "/test/exception", method = RequestMethod.GET)
+    public void test() {
+        throw new BadRequestException(ErrorCode.SIGN_ERROR, "SIGN_ERROR", ImmutableMap.of("SIGN_ERROR", "签名错误!"));
+    }
+```
+
 **Output:**
 
 ```json
 {
   "success": false,
-  "message": "DONT_APPLY_AGAIN",
+  "message": "SIGN_ERROR",
   "error_code": 34002,
   "results": {
-    "DONT_APPLY_AGAIN": "DONT_APPLY_AGAIN"
+    "SIGN_ERROR": "签名错误!"
   }
 }
 ```
