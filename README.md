@@ -20,6 +20,10 @@
 * Share on social media
 * Google analytics
 
+
+### Build
+* bundle exec jekyll serve --watch
+
 #### Screenshot
 
 ![Screenshot Post Page](https://raw.githubusercontent.com/whoooami/whoooami.github.io/master/static/img/screenshot-post-page.png  "Screenshot Post Page")
