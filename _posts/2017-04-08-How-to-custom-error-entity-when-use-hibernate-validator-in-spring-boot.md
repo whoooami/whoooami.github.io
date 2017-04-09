@@ -21,6 +21,7 @@ How to customized error message when use Hibernate Validate in spring boot/mvc?
 ```
 
 * Initial the message file to system.
+
 ```java
 
 import org.springframework.context.annotation.Bean;
@@ -91,6 +92,7 @@ public class MvcWebConfig extends WebMvcConfigurerAdapter {
 ```
 
 /i18n/message file content
+
 ```
 message_zh_CN.properties
 PageRequest.pageSize.NotNull=pageSize不能为空
