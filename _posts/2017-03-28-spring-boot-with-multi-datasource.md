@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Spring boot/Mybatis with multi DataSource."
-date:   2017-03-28 17:130:00 +0800
+date:   2017-03-28 17:10:00 +0800
 categories: [java, springboot, codefights]
 ---
 
@@ -47,6 +47,6 @@ public class JrDataSourceConfig {
 
 * how to use?
 
-Just run it.
+Multi dataSource with multi config class like above.
 
 Done.

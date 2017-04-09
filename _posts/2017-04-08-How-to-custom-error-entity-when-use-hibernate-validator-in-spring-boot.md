@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Spring boot/Mybatis with multi DataSource."
-date:   2017-03-28 17:130:00 +0800
+title:  "How to custom error entity when use hibernate validator in spring boot?"
+date:   2017-04-08 20:10:00 +0800
 categories: [java, springboot, codefights]
 ---
 
