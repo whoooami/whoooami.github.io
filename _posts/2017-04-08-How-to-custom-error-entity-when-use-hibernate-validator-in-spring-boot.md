@@ -2,7 +2,7 @@
 layout: post
 title:  "Spring boot/Mybatis with multi DataSource."
 date:   2017-03-28 17:130:00 +0800
-categories: [java, Spring boot, codefights]
+categories: [java, springboot, codefights]
 ---
 
 How to customized error message when use Hibernate Validate in spring boot/mvc?
@@ -32,6 +32,7 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
@@ -61,6 +62,17 @@ public class MvcWebConfig extends WebMvcConfigurerAdapter {
        return validator;
     }
 
+    // for swagger-ui
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
+
+        registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+        super.addResourceHandlers(registry);
+    }
+
     @Bean
     public LocaleResolver localeResolver(){
         CookieLocaleResolver resolver = new CookieLocaleResolver();
@@ -72,7 +84,7 @@ public class MvcWebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
-        interceptor.setParamName("language");
+        interceptor.setParamName("lang");
         registry.addInterceptor(interceptor);
     }
 }

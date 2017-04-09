@@ -2,7 +2,7 @@
 layout: post
 title:  "Spring boot/Mybatis with multi DataSource."
 date:   2017-03-28 17:130:00 +0800
-categories: [java, Spring boot, codefights]
+categories: [java, springboot, codefights]
 ---
 
 How to use Multi dataSource in spring boot?
