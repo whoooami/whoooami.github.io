@@ -10,6 +10,7 @@ How to customized error message when use Hibernate Validate in spring boot/mvc?
 **Solution:**
 
 * Project struture
+
 ```
 ├── src
 │   └── main
@@ -21,6 +22,7 @@ How to customized error message when use Hibernate Validate in spring boot/mvc?
 ```
 
 * Initial the message file to system.
+
 ```java
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -90,6 +92,7 @@ public class MvcWebConfig extends WebMvcConfigurerAdapter {
 ```
 
 * How to valid request params use model.
+
 ```java
 @RestController
 @RequestMapping(value = "/v1/class")
@@ -139,6 +142,7 @@ public class ClassLessonPageRequest extend PageRequest {
 ```
 
 * How to show different message depend the user's language?
+
 ```java
 import com.vipabc.vjr.vbs.common.vo.FieldException;
 import org.springframework.http.HttpHeaders;
@@ -194,6 +198,7 @@ public class FieldException {
 ```
 
 * Use request parameter 'lang' change the different language.
+
 ```java
 import com.vipabc.vjr.vbs.common.enumeration.Lang;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -222,6 +227,7 @@ public enum Lang {
 ```
 
 * /i18n/message file content
+
 ```
 message_zh_CN.properties
 PageRequest.pageSize.NotNull=pageSize不能为空
@@ -236,6 +242,7 @@ PageRequest.pageIndex.NotNull=pageIndex is not null
 **Example:**
 
 * output
+
 ```
 Response Body
 {
