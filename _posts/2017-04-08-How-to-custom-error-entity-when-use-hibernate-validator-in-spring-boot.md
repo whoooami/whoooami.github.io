@@ -21,9 +21,7 @@ How to customized error message when use Hibernate Validate in spring boot/mvc?
 ```
 
 * Initial the message file to system.
-
 ```java
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -91,23 +89,8 @@ public class MvcWebConfig extends WebMvcConfigurerAdapter {
 }
 ```
 
-/i18n/message file content
-
-```
-message_zh_CN.properties
-PageRequest.pageSize.NotNull=pageSize不能为空
-PageRequest.pageIndex.NotNull=pageIndex不能为空
-
----
-message_en.properties
-PageRequest.pageSize.NotNull=pageSize is not null
-PageRequest.pageIndex.NotNull=pageIndex is not null
-```
-
-How to valid request params use model.
-
-```
-java
+* How to valid request params use model.
+```java
 @RestController
 @RequestMapping(value = "/v1/class")
 public class ClassController {
@@ -155,10 +138,8 @@ public class ClassLessonPageRequest extend PageRequest {
 }
 ```
 
-How to show different message depend the user's language?
-
-```
-java
+* How to show different message depend the user's language?
+```java
 import com.vipabc.vjr.vbs.common.vo.FieldException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -210,6 +191,46 @@ public class FieldException {
         this.message = message;
     }
 }
+```
+
+* Use request parameter 'lang' change the different language.
+```java
+import com.vipabc.vjr.vbs.common.enumeration.Lang;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+/**
+ * Created by Whoami on 2017/4/9.
+ */
+public class BaseRequest {
+
+    private Lang lang;
+
+    @ModelAttribute
+    public Lang getLang() {
+        return lang;
+    }
+
+    public void setLang(Lang lang) {
+        this.lang = lang;
+    }
+}
+
+//attached...
+public enum Lang {
+    zh_CN, zh_TW, en
+}
+```
+
+* /i18n/message file content
+```
+message_zh_CN.properties
+PageRequest.pageSize.NotNull=pageSize不能为空
+PageRequest.pageIndex.NotNull=pageIndex不能为空
+
+---
+message_en.properties
+PageRequest.pageSize.NotNull=pageSize is not null
+PageRequest.pageIndex.NotNull=pageIndex is not null
 ```
 
 **Example:**
